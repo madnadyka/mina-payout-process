@@ -5,7 +5,6 @@ import db_model
 import traceback
 import asyncio
 import asyncpg
-import aiohttp
 import handlers
 from utils import *
 uvloop.install()
@@ -20,10 +19,10 @@ class App:
         logger.info("Mina Payout service started ...")
         signal.signal(signal.SIGINT, self.terminate)
         signal.signal(signal.SIGTERM, self.terminate)
-        asyncio.ensure_future(self.start(config), loop=self.loop)
+        asyncio.ensure_future(self.start(), loop=self.loop)
 
 
-    async def start(self, config):
+    async def start(self):
         # init_app database
         try:
             logger.info("Init db pool ")
