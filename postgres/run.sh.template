@@ -1,0 +1,8 @@
+docker run --name postgres-mina \
+            -e POSTGRES_HOST_AUTH_METHOD='trust' \
+            -p 127.0.0.1:5432:5432 \
+            --network mina-network \
+            -v $(pwd)/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/  \
+            -v postgres-mina:/var/lib/postgresql/data \
+            -it postgres:12
+            -c 'max_connections=100'

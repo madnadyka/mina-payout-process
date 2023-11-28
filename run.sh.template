@@ -1,0 +1,8 @@
+docker stop mina-payout-process
+docker rm mina-payout-process
+docker run --name mina-payout-process \
+           --restart=unless-stopped \
+           --network mina-network \
+           -v $(pwd)/src:/src/ \
+           -v $(pwd)/config:/config/\
+           -it --entrypoint "/usr/bin/python3" mina-payout-process "app.py"

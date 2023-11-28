@@ -1,0 +1,7 @@
+docker stop mina-payout-process-tests
+docker run --name mina-payout-process-tests \
+           --rm \
+           --network mina-network \
+           -v $(pwd)/src:/src/ \
+           -v $(pwd)/config:/config/\
+           --it mina-payout-process python3 -m unittest discover -v -s tests

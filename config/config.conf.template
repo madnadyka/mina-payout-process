@@ -1,0 +1,19 @@
+[NODE]
+
+graphql_host = mina-validator
+graphql_port = 3085
+default_tx_fee = 10000000
+
+[VALIDATOR]
+
+address = B62qjhiEXP45KEk8Fch4FnYJQ7UMMfiR3hq9ZeMUZ8ia3MbfEteSYDg
+name = validator1
+password = Password123
+fee = 0.07
+foundation_delegations = B62qmsYXFNNE565yv7bEMPsPnpRCsMErf7J2v5jMnuKQ1jgwZS8BzXS,B62qn71s63yywMUCcFhP4iCata7HpgyrvmGjpKa1D9544vGW6FBZ6a1,B62qqEV4oP7w2jLQGckvZzdWjfdLKySKHJ3tNU5niRjpPD7beYumWTB,B62qmQAFPta1Q3c7wXHxXRKnE3uWyBYZCLb8frdHEgavi3BbBVkpeC1
+
+
+[POSTGRESQL]
+
+dsn = postgresql://test:test@postgres-mina:5432/test
+pool_threads = 20
